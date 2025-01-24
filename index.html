@@ -7,7 +7,10 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -18,13 +21,18 @@
   <body>
     <!-- Barra de navegación -->
     <nav class="navBar">
+      <!-- Menú hamburguesa -->
+      <div class="hamburger">
+        <i class="fa fa-bars"></i>
+      </div>
+
       <!-- Logo -->
       <div class="header">
         <div class="logo">
-          <img src="./img/Untitled-fotor-20250113191617-removebg-preview (1).png"alt="Logo"/>
-        </div>
-        <div class="hamburger">
-          <i class="fa fa-bars"></i>
+          <img
+            src="./img/Untitled-fotor-20250113191617-removebg-preview (1).png"
+            alt="Logo"
+          />
         </div>
       </div>
 
@@ -62,7 +70,7 @@
           </li>
           <li class="unitListSection">
             <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
-            <Workflow class="textIcon" href="#contact">Workflow</a>
+            <a class="textIcon" href="#contact">Workflow</a>
           </li>
           <li class="unitListSection">
             <i class="fa-solid fa-comments" aria-hidden="true"></i>
@@ -70,21 +78,44 @@
           </li>
           <li class="unitListSection">
             <i class="fa-solid fa-phone" aria-hidden="true"></i>
-            <Contact class="textIcon" href="#contact">Contact Me</a>
+            <a class="textIcon" href="#contact">Contact Me</a>
           </li>
         </ul>
       </div>
     </nav>
     <section class="initialBanner" id="Home">
-      <div class="bannerContent">
-        <h1 class="sentence">"Innovación en cada línea de código, transformando ideas en soluciones que perduran y experiencias digitales de valor."</h1>
-      </div>
+      <header class="bannerContent">
+        <h1 class="sentence">
+          "Innovación en cada línea de código, transformando ideas en soluciones
+          que perduran y experiencias digitales de valor."
+        </h1>
+      </header>
     </section>
-    <section class="aboutMeBanner" id="About">
+    <section class="aboutMeBanner about-section" id="About">
       <div class="aboutMeContent">
-        <h1 class="name">Johana Murillo Rincon</h1>
-        <img class=photo src="./img/joha2.jpg" alt="Johana">
-        <p class="description">Desarrolladora web full stack comprometida con crear soluciones digitales que impulsen tus proyectos al siguiente nivel. Mi misión es entender tus necesidades y convertirlas en aplicaciones modernas, funcionales y visualmente atractivas. Juntos podemos llevar tus ideas más allá de lo esperado.</p>
+        <!-- Encabezado con el título -->
+        <header>
+          <h1 class="name">Johana Murillo Rincon</h1>
+        </header>
+
+        <!-- Figura con la imagen -->
+        <figure class="photo">
+          <img
+            src="./img/joha2.jpg"
+            alt="Foto de Johana Murillo Rincon, desarrolladora web"
+          />
+        </figure>
+
+        <!-- Descripción del contenido -->
+        <article class="descriptionContent">
+          <p class="description">
+            Desarrolladora web full stack comprometida con crear soluciones
+            digitales que impulsen tus proyectos al siguiente nivel. Mi misión
+            es entender tus necesidades y convertirlas en aplicaciones modernas,
+            funcionales y visualmente atractivas. Juntos podemos llevar tus
+            ideas más allá de lo esperado.
+          </p>
+        </article>
       </div>
     </section>
     <script src="scrip.js"></script>

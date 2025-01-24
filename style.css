@@ -10,13 +10,12 @@ body {
 
 /* Estilo para la barra de navegación */
 .navBar {
-  display: flex; /* Flexbox para disposición */
-  flex-direction: column; /* Dirección principal: columna */
+  display: flex;
+  flex-direction: column;
   position: fixed;
-  top: 0;
-  left: 0; /* Alinea la barra a la izquierda */
-  height: 100%; /* Ocupa toda la altura */
-  width: auto; /* Ancho de la barra de navegación */
+  left: 0;
+  height: 100%;
+  width: auto;
   backdrop-filter: blur (30px);
   box-shadow: 10px 10px 20px #111, -10px -10px 20px #ddd;
   padding: 5px 0; /* Espaciado superior e inferior */
@@ -25,25 +24,23 @@ body {
 }
 
 .navBar .header {
-  display: flex; /* Coloca el logo y el hamburguesa en fila */
-  justify-content: space-between; /* Espacia el logo y el menú hamburguesa */
-  align-items: stretch; /* Centra verticalmente los elementos */
-  width: 100%; /* Ocupa todo el ancho de la barra de navegación */
-  padding: 0 20px; /* Espaciado interno a los lados */
-  box-sizing: border-box; /* Incluye padding en el cálculo del ancho */
-  margin-bottom: -30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+  margin-top: 35px;
 }
 
-/* Logo: Contenedor circular */
+/* Logo */
 .navBar .logo {
-  margin-left: -2.8rem;
-  width: 8.1rem; /* Tamaño del logo */
+  width: 8.1rem;
   height: 8.1rem;
   clip-path: circle(50% at 50% 50%);
   object-fit: cover;
 }
 
-/* Logo: Imagen */
 .navBar .logo img {
   width: 100%;
   height: 100%;
@@ -53,20 +50,32 @@ body {
 
 /* Menú hamburguesa */
 .navBar .hamburger {
-  font-size: 24px; /* Tamaño del ícono */
-  color: white; /* Color del ícono */
-  cursor: pointer; /* Cambia el cursor al pasar por encima */
-  max-width: 40px; /* Previene que el ícono se desborde */
-  text-align: center;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  max-width: 40px;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1100;
+  padding: 10px;
+}
+.navBar.active .hamburger {
+  top: 10px;
+  right: 10px;
+  left: auto;
+  transform: none;
 }
 .navBar .hamburger:hover {
   color: #575757;
 }
 /* Estiliza los íconos en general */
 .navBar .fa-solid {
-  color: white; /* Color blanco para todos los íconos */
-  font-size: 18px; /* Tamaño uniforme para los íconos */
+  color: white;
+  font-size: 18px;
   padding: 1.5rem;
+  justify-content: center;
 }
 .navBar .fa-solid:hover {
   color: #575757;
@@ -75,9 +84,8 @@ body {
 /* Contenedor de secciones */
 .barSections {
   display: flex;
-  flex-direction: column; /* Alinea los elementos de la barra en columna */
-  width: 100%; /* Ocupa todo el ancho de la barra */
-  margin-bottom: -20px;
+  flex-direction: column;
+  width: 100%;
 }
 
 /* Elimina los estilos predeterminados de la lista */
@@ -89,32 +97,32 @@ body {
 
 /* Estiliza los elementos de la lista */
 .barSections .listSections .unitListSection {
-  margin: -0.7rem 0; /* Espacio entre los enlaces */
+  margin: -0.7rem 0; 
 }
 
 /* Estiliza los enlaces */
 .barSections .listSections .unitListSection .textIcon {
   text-decoration: none;
-  color: white; /* Color del texto */
-  font-size: 18px; /* Tamaño de fuente */
+  color: white; 
+  font-size: 18px; 
   font-weight: normal;
-  padding: -0.6rem -0.6rem; /* Espaciado dentro de los enlaces */
-  display: flex; /* Coloca los íconos y texto en línea */
-  align-items: center; /* Centra verticalmente el contenido */
-  gap: -0.9rem; /* Espaciado entre ícono y texto */
-  transition: background-color 0.3s; /* Transición para el hover */
+  padding: -0.6rem -0.6rem;
+  display: flex; 
+  align-items: center; 
+  gap: -0.9rem; 
+  background-color 0.3s; 
 }
 
 /* Efecto hover para los enlaces */
 .barSections .listSections .unitListSection .textIcon:hover {
-  color: #575757; /* Cambia el color al pasar el mouse */
+  color: #575757; 
 }
 
 /* Barra de búsqueda */
 .search-container {
   display: flex;
   align-items: center;
-  width: auto; /* Ajusta el tamaño según tus necesidades */
+  width: auto; 
   padding: -0.8rem -0.8rem;
   margin-bottom: 0.9rem;
 }
@@ -200,7 +208,23 @@ body {
   max-width: 800px; /* Limita el ancho del texto */
   margin: 0 auto; /* Centrado horizontal */
 }
+.aboutMeBanner .aboutMeContent .photo {
+  width: 9.5rem; /* Tamaño del contenedor */
+  height: 9.5rem; /* Igual al ancho para mantener la forma circular */
+  border-radius: 50%; /* Hace que el contenedor sea circular */
+  overflow: hidden; /* Oculta cualquier contenido fuera del área circular */
+  margin: 20px auto; /* Centra el contenedor horizontalmente y añade espacio */
+  display: flex; /* Centra la imagen dentro del contenedor */
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0; /* Fondo opcional si hay transparencias */
+}
 
+.aboutMeBanner .photo img {
+  width: 100%; /* Asegura que la imagen se ajuste al contenedor */
+  height: 100%; /* Escala la altura para llenar el contenedor */
+  object-fit: contain; /* Escala la imagen completa dentro del círculo sin recortes */
+}
 .aboutMeBanner .description {
   top: 0;
   font-family: "poppins", sans-serif;
@@ -209,16 +233,4 @@ body {
   line-height: 1.5; /* Mejora la legibilidad */
   max-width: 800px; /* Limita el ancho del texto */
   margin: 0 auto; /* Centrado horizontal */
-}
-
-/* Media query para dispositivos más pequeños */
-@media (max-width: 768px) {
-  .navBar {
-    width: 200px; /* Ajusta el ancho en pantallas pequeñas */
-  }
-
-  .navBar .header {
-    flex-direction: column; /* Coloca el logo y el menú en columna */
-    align-items: center;
-  }
 }
