@@ -1,0 +1,224 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: black;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Estilo para la barra de navegación */
+.navBar {
+  display: flex; /* Flexbox para disposición */
+  flex-direction: column; /* Dirección principal: columna */
+  position: fixed;
+  top: 0;
+  left: 0; /* Alinea la barra a la izquierda */
+  height: 100%; /* Ocupa toda la altura */
+  width: auto; /* Ancho de la barra de navegación */
+  backdrop-filter: blur (30px);
+  box-shadow: 10px 10px 20px #111, -10px -10px 20px #ddd;
+  padding: 5px 0; /* Espaciado superior e inferior */
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.navBar .header {
+  display: flex; /* Coloca el logo y el hamburguesa en fila */
+  justify-content: space-between; /* Espacia el logo y el menú hamburguesa */
+  align-items: stretch; /* Centra verticalmente los elementos */
+  width: 100%; /* Ocupa todo el ancho de la barra de navegación */
+  padding: 0 20px; /* Espaciado interno a los lados */
+  box-sizing: border-box; /* Incluye padding en el cálculo del ancho */
+  margin-bottom: -30px;
+}
+
+/* Logo: Contenedor circular */
+.navBar .logo {
+  margin-left: -2.8rem;
+  width: 8.1rem; /* Tamaño del logo */
+  height: 8.1rem;
+  clip-path: circle(50% at 50% 50%);
+  object-fit: cover;
+}
+
+/* Logo: Imagen */
+.navBar .logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: 6px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Menú hamburguesa */
+.navBar .hamburger {
+  font-size: 24px; /* Tamaño del ícono */
+  color: white; /* Color del ícono */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  max-width: 40px; /* Previene que el ícono se desborde */
+  text-align: center;
+}
+.navBar .hamburger:hover {
+  color: #575757;
+}
+/* Estiliza los íconos en general */
+.navBar .fa-solid {
+  color: white; /* Color blanco para todos los íconos */
+  font-size: 18px; /* Tamaño uniforme para los íconos */
+  padding: 1.5rem;
+}
+.navBar .fa-solid:hover {
+  color: #575757;
+}
+
+/* Contenedor de secciones */
+.barSections {
+  display: flex;
+  flex-direction: column; /* Alinea los elementos de la barra en columna */
+  width: 100%; /* Ocupa todo el ancho de la barra */
+  margin-bottom: -20px;
+}
+
+/* Elimina los estilos predeterminados de la lista */
+.barSections .listSections {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Estiliza los elementos de la lista */
+.barSections .listSections .unitListSection {
+  margin: -0.7rem 0; /* Espacio entre los enlaces */
+}
+
+/* Estiliza los enlaces */
+.barSections .listSections .unitListSection .textIcon {
+  text-decoration: none;
+  color: white; /* Color del texto */
+  font-size: 18px; /* Tamaño de fuente */
+  font-weight: normal;
+  padding: -0.6rem -0.6rem; /* Espaciado dentro de los enlaces */
+  display: flex; /* Coloca los íconos y texto en línea */
+  align-items: center; /* Centra verticalmente el contenido */
+  gap: -0.9rem; /* Espaciado entre ícono y texto */
+  transition: background-color 0.3s; /* Transición para el hover */
+}
+
+/* Efecto hover para los enlaces */
+.barSections .listSections .unitListSection .textIcon:hover {
+  color: #575757; /* Cambia el color al pasar el mouse */
+}
+
+/* Barra de búsqueda */
+.search-container {
+  display: flex;
+  align-items: center;
+  width: auto; /* Ajusta el tamaño según tus necesidades */
+  padding: -0.8rem -0.8rem;
+  margin-bottom: 0.9rem;
+}
+
+.search-container .searchForm {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.search-container .fa-solid {
+  margin-right: 0rem; /* Espacio entre el ícono y el input */
+}
+
+.search-container .searchInput {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+/* Ocultar los elementos por defecto */
+.barSections .listSections .unitListSection .textIcon,
+.searchInput {
+  display: none;
+}
+
+/* Cuando el menú hamburguesa esté activo, mostrar los elementos */
+.navBar.active .barSections .listSections .unitListSection .textIcon,
+.navBar.active .searchInput {
+  display: inline-flex; /* O cualquier otro valor que necesites */
+}
+
+.initialBanner {
+  display: flex;
+  align-items: center; /* Centra verticalmente el contenido */
+  justify-content: center; /* Centra horizontalmente el contenido */
+  height: 100vh; /* Ocupa todo el alto de la pantalla */
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+    url("./img/initial.webp");
+  background-size: cover; /* Hace que la imagen cubra todo el área */
+  background-position: center; /* Centra la imagen */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 1rem; /* Espaciado lateral para dispositivos pequeños */
+}
+
+.bannerContent .sentence {
+  font-family: "Libre Baskerville", serif;
+  font-size: 3rem; /* Tamaño impactante */
+  font-weight: 500; /* Texto en negrita */
+  color: #fff; /* Color del texto */
+  line-height: 1.5; /* Mejora la legibilidad */
+  max-width: 800px; /* Limita el ancho del texto */
+  margin: 0 auto; /* Centrado horizontal */
+}
+
+.aboutMeBanner {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: normal;
+  text-align: center;
+  background: linear-gradient(rgba(177, 193, 211, 0.9), rgba(0, 0, 0, 0.96)),
+    url("./img/claro2.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.aboutMeBanner .name {
+  align-items: normal;
+  padding-top: 10%;
+  font-family: "Libre Baskerville", serif;
+  font-size: 3rem; /* Tamaño impactante */
+  font-weight: 500; /* Texto en negrita */
+  color: #fff; /* Color del texto */
+  line-height: 1.5; /* Mejora la legibilidad */
+  max-width: 800px; /* Limita el ancho del texto */
+  margin: 0 auto; /* Centrado horizontal */
+}
+
+.aboutMeBanner .description {
+  top: 0;
+  font-family: "poppins", sans-serif;
+  padding-top: 5%;
+  color: #fff; /* Color del texto */
+  line-height: 1.5; /* Mejora la legibilidad */
+  max-width: 800px; /* Limita el ancho del texto */
+  margin: 0 auto; /* Centrado horizontal */
+}
+
+/* Media query para dispositivos más pequeños */
+@media (max-width: 768px) {
+  .navBar {
+    width: 200px; /* Ajusta el ancho en pantallas pequeñas */
+  }
+
+  .navBar .header {
+    flex-direction: column; /* Coloca el logo y el menú en columna */
+    align-items: center;
+  }
+}
