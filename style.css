@@ -97,32 +97,31 @@ body {
 
 /* Estiliza los elementos de la lista */
 .barSections .listSections .unitListSection {
-  margin: -0.7rem 0; 
+  margin: -0.7rem 0;
 }
 
 /* Estiliza los enlaces */
 .barSections .listSections .unitListSection .textIcon {
   text-decoration: none;
-  color: white; 
-  font-size: 18px; 
+  color: white;
+  font-size: 18px;
   font-weight: normal;
   padding: -0.6rem -0.6rem;
-  display: flex; 
-  align-items: center; 
-  gap: -0.9rem; 
-  background-color 0.3s; 
+  display: flex;
+  align-items: center;
+  gap: -0.9rem;
 }
 
 /* Efecto hover para los enlaces */
 .barSections .listSections .unitListSection .textIcon:hover {
-  color: #575757; 
+  color: #575757;
 }
 
 /* Barra de búsqueda */
 .search-container {
   display: flex;
   align-items: center;
-  width: auto; 
+  width: auto;
   padding: -0.8rem -0.8rem;
   margin-bottom: 0.9rem;
 }
@@ -154,14 +153,14 @@ body {
 /* Cuando el menú hamburguesa esté activo, mostrar los elementos */
 .navBar.active .barSections .listSections .unitListSection .textIcon,
 .navBar.active .searchInput {
-  display: inline-flex; /* O cualquier otro valor que necesites */
+  display: inline-flex;
 }
-
+/*Estilo de seccion home*/
 .initialBanner {
   display: flex;
-  align-items: center; /* Centra verticalmente el contenido */
-  justify-content: center; /* Centra horizontalmente el contenido */
-  height: 100vh; /* Ocupa todo el alto de la pantalla */
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
     url("./img/initial.webp");
   background-size: cover; /* Hace que la imagen cubra todo el área */
@@ -173,7 +172,7 @@ body {
   text-align: center;
   padding: 0 1rem; /* Espaciado lateral para dispositivos pequeños */
 }
-
+/*Estilo de frase, seccion home*/
 .bannerContent .sentence {
   font-family: "Libre Baskerville", serif;
   font-size: 3rem; /* Tamaño impactante */
@@ -183,7 +182,7 @@ body {
   max-width: 800px; /* Limita el ancho del texto */
   margin: 0 auto; /* Centrado horizontal */
 }
-
+/*Estilo de contenedor seccion aboutMe*/
 .aboutMeBanner {
   position: relative;
   height: 100vh;
@@ -191,12 +190,12 @@ body {
   justify-content: center;
   align-items: normal;
   text-align: center;
-  background: linear-gradient(rgba(177, 193, 211, 0.9), rgba(0, 0, 0, 0.96)),
+  background: linear-gradient(rgba(0, 0, 0, 4), rgba(177, 193, 211, 0.9)),
     url("./img/claro2.jpg");
   background-size: cover;
   background-position: center;
 }
-
+/*Estilo de name, seccion aboutMe*/
 .aboutMeBanner .name {
   align-items: normal;
   padding-top: 10%;
@@ -208,6 +207,8 @@ body {
   max-width: 800px; /* Limita el ancho del texto */
   margin: 0 auto; /* Centrado horizontal */
 }
+
+/*Estilo de contenedor foto, seccion aboutMe*/
 .aboutMeBanner .aboutMeContent .photo {
   width: 9.5rem; /* Tamaño del contenedor */
   height: 9.5rem; /* Igual al ancho para mantener la forma circular */
@@ -219,12 +220,13 @@ body {
   align-items: center;
   background-color: #f0f0f0; /* Fondo opcional si hay transparencias */
 }
-
+/*Estilo de foto, seccion aboutMe*/
 .aboutMeBanner .photo img {
   width: 100%; /* Asegura que la imagen se ajuste al contenedor */
   height: 100%; /* Escala la altura para llenar el contenedor */
   object-fit: contain; /* Escala la imagen completa dentro del círculo sin recortes */
 }
+/*Estilo de descripcion , seccion aboutMe*/
 .aboutMeBanner .description {
   top: 0;
   font-family: "poppins", sans-serif;
@@ -233,4 +235,21 @@ body {
   line-height: 1.5; /* Mejora la legibilidad */
   max-width: 800px; /* Limita el ancho del texto */
   margin: 0 auto; /* Centrado horizontal */
+}
+
+.download-button {
+  margin-top: 3rem;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #304871; /* Azul atractivo */
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.download-button:hover {
+  background-color: #809fc7; /* Azul más oscuro al pasar el mouse */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
