@@ -53,20 +53,28 @@
       <div class="barSections">
         <ul class="listSections">
           <li class="unitListSection">
-            <i class="fa-solid fa-house" aria-hidden="true"></i>
-            <a class="textIcon" href="#home"> Home</a>
+            <a class="fa-solid fa-house" href="index.html#Home"
+              ><i aria-hidden="true"></i
+            ></a>
+            <a class="textIcon" href="index.html#Home">Home</a>
           </li>
           <li class="unitListSection">
-            <i class="fa-solid fa-user" aria-hidden="true"></i>
-            <a class="textIcon" href="#about">About Me</a>
+            <a class="fa-solid fa-user" href="index.html#About"
+              ><i aria-hidden="true"></i
+            ></a>
+            <a class="textIcon" href="#About">About Me</a>
           </li>
           <li class="unitListSection">
-            <i class="fa-solid fa-laptop-code" aria-hidden="true"></i>
-            <a class="textIcon" href="#skills">Skills</a>
+            <a class="fa-solid fa-laptop-code" href="#Skills"
+              ><i aria-hidden="true"></i
+            ></a>
+            <a class="textIcon" href="#Skills">Skills</a>
           </li>
           <li class="unitListSection">
-            <i class="fa-solid fa-folder-open" aria-hidden="true"></i>
-            <a class="textIcon" href="#projects">Projects</a>
+            <a class="fa-solid fa-folder-open" href="#Projects"
+              ><i aria-hidden="true"></i
+            ></a>
+            <a class="textIcon" href="#Projects">Projects</a>
           </li>
           <li class="unitListSection">
             <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
@@ -107,7 +115,7 @@
         </figure>
 
         <!-- Descripción del contenido -->
-        <article class="descriptionContent">
+        <article class="descriptionContent" id="descriptionContent">
           <p class="description">
             Desarrolladora web full stack comprometida con crear soluciones
             digitales que impulsen tus proyectos al siguiente nivel. Mi misión
@@ -128,6 +136,102 @@
         </div>
       </div>
     </section>
+    <section class="skillsBanner" id="Skills">
+      <header class="title">
+        <h1 id="title_skills">Habilidades</h1>
+      </header>
+      <article id="skills">
+        <i class="fa-brands fa-html5"></i>
+        <i class="fa-brands fa-css3-alt"></i>
+        <i class="fa-brands fa-js"></i>
+        <i class="fa-brands fa-java"></i>
+        <i class="fa-brands fa-python"></i>
+        <i class="fa-brands fa-github"></i>
+        <i class="fa-solid fa-database"></i>
+      </article>
+    </section>
+
+    <main class="projects" id="Projects">
+      <header class="titleProject">
+        <h1 id="title_projects">Proyectos</h1>
+      </header>
+      <section class="card-container">
+        <article class="card">
+          <div class="card-inner" style="--clr: #000">
+            <div class="imgBox">
+              <img src="./img/Elevia Logo - 1.jpg" alt="Product" />
+            </div>
+            <div class="icon">
+              <a href="#" class="iconBox">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="productDetails">
+            <h2 class="productTitle">
+              Elevia, <br />E-commerce de Moda y Accesorios
+            </h2>
+            <p class="productDescription">
+              Desarrollo full stack en equipo, implementando autenticación,
+              gestión de productos y pasarela de pagos para una experiencia de
+              compra fluida.
+            </p>
+            <button class="Informacion">Mas Info</button>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-inner" style="--clr: #000">
+            <div class="imgBox">
+              <img src="../img/" alt="Product" />
+            </div>
+            <div class="icon">
+              <a href="#" class="iconBox">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="productDetails">
+            <h2 class="productTitle">Titulo del proyecto</h2>
+            <p class="productDescription">Descripción</p>
+            <button class="Informacion">Mas Info</button>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-inner" style="--clr: #000">
+            <div class="imgBox">
+              <img src="../img/" alt="Product" />
+            </div>
+            <div class="icon">
+              <a href="#" class="iconBox">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="productDetails">
+            <h2 class="productTitle">Titulo del proyecto</h2>
+            <p class="productDescription">Descripción</p>
+            <button class="Informacion">Mas Info</button>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-inner" style="--clr: #000">
+            <div class="imgBox">
+              <img src="../img/Balon.jpg" alt="Product" />
+            </div>
+            <div class="icon">
+              <a href="#" class="iconBox">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="productDetails">
+            <h2 class="productTitle">Titulo del proyecto</h2>
+            <p class="productDescription">Descripción</p>
+            <button class="Informacion">Mas Info</button>
+          </div>
+        </article>
+      </section>
+    </main>
     <script src="scrip.js"></script>
   </body>
 </html>

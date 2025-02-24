@@ -12,20 +12,21 @@ body {
 .navBar {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   position: fixed;
   left: 0;
   height: 100%;
-  width: auto;
-  backdrop-filter: blur (30px);
-  box-shadow: 10px 10px 20px #111, -10px -10px 20px #ddd;
-  padding: 5px 0; /* Espaciado superior e inferior */
+  width: 120px;
+  backdrop-filter: blur(30px);
   box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  box-sizing: border-box;
   z-index: 1000;
 }
 
 .navBar .header {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
   padding: 0 20px;
@@ -39,6 +40,10 @@ body {
   height: 8.1rem;
   clip-path: circle(50% at 50% 50%);
   object-fit: cover;
+  margin-top: -0.4rem;
+  margin-left: 0px !important;
+  align-self: flex-start;
+  transition: opacity 0.2s ease-in-out, visibility 0.3s ease-in-out;
 }
 
 .navBar .logo img {
@@ -46,6 +51,7 @@ body {
   height: 100%;
   object-fit: cover;
   box-shadow: 6px 0 10px rgba(0, 0, 0, 0.1);
+  align-self: flex-start;
 }
 
 /* Menú hamburguesa */
@@ -70,12 +76,25 @@ body {
 .navBar .hamburger:hover {
   color: #575757;
 }
+
+.navBar.active {
+  width: 250px;
+}
+.navBar.active .logo {
+  opacity: 0; /* Oculta el logo */
+  visibility: hidden;
+  pointer-events: none;
+}
+
 /* Estiliza los íconos en general */
 .navBar .fa-solid {
   color: white;
   font-size: 18px;
   padding: 1.5rem;
   justify-content: center;
+  margin-top: 13px;
+  top: 15px;
+  margin-left: 1rem;
 }
 .navBar .fa-solid:hover {
   color: #575757;
@@ -86,6 +105,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
+  margin-left: 0.1rem;
 }
 
 /* Elimina los estilos predeterminados de la lista */
@@ -94,10 +114,14 @@ body {
   padding: 0;
   margin: 0;
 }
+.barSections .listSections .fa-solid {
+  text-decoration: none;
+}
 
 /* Estiliza los elementos de la lista */
 .barSections .listSections .unitListSection {
   margin: -0.7rem 0;
+  text-decoration: none;
 }
 
 /* Estiliza los enlaces */
@@ -109,7 +133,7 @@ body {
   padding: -0.6rem -0.6rem;
   display: flex;
   align-items: center;
-  gap: -0.9rem;
+  gap: -0.8rem;
 }
 
 /* Efecto hover para los enlaces */
@@ -123,7 +147,8 @@ body {
   align-items: center;
   width: auto;
   padding: -0.8rem -0.8rem;
-  margin-bottom: 0.9rem;
+  margin-bottom: 0rem;
+  margin-top: -3.5rem;
 }
 
 .search-container .searchForm {
@@ -133,7 +158,7 @@ body {
 }
 
 .search-container .fa-solid {
-  margin-right: 0rem; /* Espacio entre el ícono y el input */
+  margin-right: 0rem;
 }
 
 .search-container .searchInput {
@@ -163,24 +188,24 @@ body {
   height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
     url("./img/initial.webp");
-  background-size: cover; /* Hace que la imagen cubra todo el área */
-  background-position: center; /* Centra la imagen */
+  background-size: cover;
+  background-position: center;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 0 1rem; /* Espaciado lateral para dispositivos pequeños */
+  padding: 0 1rem;
 }
 /*Estilo de frase, seccion home*/
 .bannerContent .sentence {
   font-family: "Libre Baskerville", serif;
-  font-size: 3rem; /* Tamaño impactante */
-  font-weight: 500; /* Texto en negrita */
-  color: #fff; /* Color del texto */
-  line-height: 1.5; /* Mejora la legibilidad */
-  max-width: 800px; /* Limita el ancho del texto */
-  margin: 0 auto; /* Centrado horizontal */
+  font-size: 3rem;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.5;
+  max-width: 800px;
+  margin: 0 auto;
 }
 /*Estilo de contenedor seccion aboutMe*/
 .aboutMeBanner {
@@ -198,50 +223,51 @@ body {
 /*Estilo de name, seccion aboutMe*/
 .aboutMeBanner .name {
   align-items: normal;
-  padding-top: 10%;
+  padding-top: 5%;
   font-family: "Libre Baskerville", serif;
-  font-size: 3rem; /* Tamaño impactante */
-  font-weight: 500; /* Texto en negrita */
-  color: #fff; /* Color del texto */
-  line-height: 1.5; /* Mejora la legibilidad */
-  max-width: 800px; /* Limita el ancho del texto */
-  margin: 0 auto; /* Centrado horizontal */
+  font-size: 3rem;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.5;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 /*Estilo de contenedor foto, seccion aboutMe*/
 .aboutMeBanner .aboutMeContent .photo {
-  width: 9.5rem; /* Tamaño del contenedor */
-  height: 9.5rem; /* Igual al ancho para mantener la forma circular */
-  border-radius: 50%; /* Hace que el contenedor sea circular */
-  overflow: hidden; /* Oculta cualquier contenido fuera del área circular */
-  margin: 20px auto; /* Centra el contenedor horizontalmente y añade espacio */
-  display: flex; /* Centra la imagen dentro del contenedor */
+  width: 9.5rem;
+  height: 9.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 20px auto;
+  display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f0f0f0; /* Fondo opcional si hay transparencias */
+  background-color: #f0f0f0;
+  margin-top: 2.5%;
 }
 /*Estilo de foto, seccion aboutMe*/
 .aboutMeBanner .photo img {
-  width: 100%; /* Asegura que la imagen se ajuste al contenedor */
-  height: 100%; /* Escala la altura para llenar el contenedor */
-  object-fit: contain; /* Escala la imagen completa dentro del círculo sin recortes */
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 /*Estilo de descripcion , seccion aboutMe*/
 .aboutMeBanner .description {
   top: 0;
   font-family: "poppins", sans-serif;
-  padding-top: 5%;
-  color: #fff; /* Color del texto */
-  line-height: 1.5; /* Mejora la legibilidad */
-  max-width: 800px; /* Limita el ancho del texto */
-  margin: 0 auto; /* Centrado horizontal */
+  padding-top: 2%;
+  color: #fff;
+  line-height: 1.5;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .download-button {
-  margin-top: 3rem;
+  margin-top: 5%;
   display: inline-block;
   padding: 10px 20px;
-  background-color: #304871; /* Azul atractivo */
+  background-color: #304871;
   color: #fff;
   font-size: 16px;
   text-decoration: none;
@@ -250,6 +276,202 @@ body {
 }
 
 .download-button:hover {
-  background-color: #809fc7; /* Azul más oscuro al pasar el mouse */
+  background-color: #809fc7;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.skillsBanner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+    url("./img/initial.webp");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.skillsBanner #title_skills {
+  position: absolute;
+  top: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Libre Baskerville", serif;
+  font-size: 3rem;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.5;
+  max-width: 1000px;
+}
+#skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 90px;
+}
+
+#skills i {
+  font-size: 12rem;
+  color: white;
+}
+
+.fa-brands:hover,
+.fa-solid:hover {
+  color: #304871 !important;
+  transition: color 0.3s ease-in-out;
+}
+
+.projects {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(rgba(0, 0, 0, 4), rgba(177, 193, 211, 0.9)),
+    url("./img/claro2.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.titleProject {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-family: "Libre Baskerville", serif;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.card-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  align-items: start;
+  text-align: center;
+  width: calc(min(80rem, 100%));
+  gap: 20px;
+  margin-bottom: 2rem;
+  top: 30px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  height: 35vw;
+  width: 100%;
+}
+
+.card-inner {
+  position: relative;
+  background-color: #000;
+  width: 100%;
+  height: 18rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgBox img {
+  max-width: 95%;
+  max-height: 95%;
+  object-fit: contain;
+  margin-top: 10px;
+  border-radius: 1rem;
+}
+
+.imgBox {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.imgBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.icon {
+  position: absolute;
+  bottom: -0.4rem;
+  right: -0.4rem;
+  width: 5rem;
+  height: 5rem;
+  background: var(--clr);
+  border-radius: 50%;
+}
+
+.iconBox {
+  position: absolute;
+  inset: 0.625rem;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.iconBox .fa-brands.fa-github {
+  color: #304871;
+  font-size: 3rem;
+}
+
+.iconBox:hover {
+  transform: scale(1.1);
+}
+
+.productDetails {
+  padding: 1rem;
+  text-align: start;
+  color: #fff;
+}
+
+.productTitle {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-family: "Libre Baskerville", serif;
+}
+
+.productDescription {
+  font-size: 0.7rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.Informacion {
+  padding: 0.8rem 1.2rem;
+  background-color: #304871;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: "Libre Baskerville", serif;
+}
+
+.Informacion:hover {
+  background-color: rgba(177, 193, 211, 0.9);
+}
+
+.card:hover {
+  transform: translateY(-10px);
 }
